@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fraudlens"
+version = "0.1.0"
+description = "Credit card fraud detection research and API"
+requires-python = ">=3.11,<3.15"
+dependencies = ["fastapi>=0.115,<1", "uvicorn[standard]>=0.34,<1", "pydantic-settings>=2.7,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1"]
+ml = ["pandas>=2.2,<4", "scikit-learn>=1.6,<2", "joblib>=1.4,<2", "matplotlib>=3.9,<4", "jupyterlab>=4,<5"]
+
+[tool.setuptools.packages.find]
+include = ["backend*", "ml*"]
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests", "ml/tests"]
+pythonpath = ["."]

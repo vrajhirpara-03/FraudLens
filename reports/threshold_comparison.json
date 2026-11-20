@@ -1,0 +1,53 @@
+{
+  "partition": "validation only",
+  "rows": 56745,
+  "fraud": 57,
+  "dataset_sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89",
+  "comparison": [
+    {
+      "policy": "Saved F1 baseline",
+      "threshold": 0.9999922476120927,
+      "recall": 0.7017543859649122,
+      "precision": 0.9302325581395349,
+      "detected": 40,
+      "missed": 17,
+      "false_alarms": 3,
+      "alerts": 43,
+      "alerts_per_1000": 0.7577760155079742
+    },
+    {
+      "policy": "At least 80% validation recall",
+      "threshold": 0.9649489332310652,
+      "recall": 0.8070175438596491,
+      "precision": 0.2967741935483871,
+      "detected": 46,
+      "missed": 11,
+      "false_alarms": 109,
+      "alerts": 155,
+      "alerts_per_1000": 2.731518195435721
+    },
+    {
+      "policy": "At least 90% validation recall",
+      "threshold": 0.1804657772193402,
+      "recall": 0.9122807017543859,
+      "precision": 0.006753246753246753,
+      "detected": 52,
+      "missed": 5,
+      "false_alarms": 7648,
+      "alerts": 7700,
+      "alerts_per_1000": 135.6947748700326
+    },
+    {
+      "policy": "At least 95% validation recall",
+      "threshold": 0.08029093362089221,
+      "recall": 0.9649122807017544,
+      "precision": 0.003907082474959153,
+      "detected": 55,
+      "missed": 2,
+      "false_alarms": 14022,
+      "alerts": 14077,
+      "alerts_per_1000": 248.0747202396687
+    }
+  ],
+  "note": "Exploratory validation estimates, not guarantees. No test predictions computed. Saved model and threshold unchanged."
+}

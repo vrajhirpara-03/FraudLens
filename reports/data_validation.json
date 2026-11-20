@@ -1,0 +1,12 @@
+{
+  "rows": 284807,
+  "fraud": 492,
+  "legitimate": 284315,
+  "fraud_rate": 0.001727485630620034,
+  "duplicate_feature_rows": 1081,
+  "time_range_seconds": [
+    0.0,
+    172792.0
+  ],
+  "sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"
+}

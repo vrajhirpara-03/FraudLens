@@ -1,0 +1,83 @@
+{
+  "dataset": {
+    "rows": 284807,
+    "fraud": 492,
+    "legitimate": 284315,
+    "fraud_rate": 0.001727485630620034,
+    "duplicate_feature_rows": 1081,
+    "time_range_seconds": [
+      0.0,
+      172792.0
+    ],
+    "sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"
+  },
+  "sklearn_version": "1.9.1",
+  "seed": 42,
+  "split_method": "chronological 60/20/20; identical timestamps kept together; duplicate features removed",
+  "splits": {
+    "train": {
+      "rows": 170235,
+      "fraud": 342,
+      "time_min": 0.0,
+      "time_max": 120392.0
+    },
+    "validation": {
+      "rows": 56745,
+      "fraud": 57,
+      "time_min": 120393.0,
+      "time_max": 145233.0
+    },
+    "test": {
+      "rows": 56746,
+      "fraud": 74,
+      "time_min": 145234.0,
+      "time_max": 172792.0
+    }
+  },
+  "threshold": 0.9999922476120927,
+  "threshold_selection": "maximum F1 on validation only; not a business cost optimum",
+  "validation": {
+    "average_precision": 0.7726808523329118,
+    "precision": 0.9302325581395349,
+    "recall": 0.7017543859649122,
+    "false_positive_rate": 5.292125317527519e-05,
+    "alerts_per_1000": 0.7577760155079742,
+    "confusion_matrix": {
+      "tn": 56685,
+      "fp": 3,
+      "fn": 17,
+      "tp": 40
+    }
+  },
+  "test": {
+    "average_precision": 0.7474592161114845,
+    "precision": 0.9423076923076923,
+    "recall": 0.6621621621621622,
+    "false_positive_rate": 5.293619424054207e-05,
+    "alerts_per_1000": 0.9163641490149085,
+    "confusion_matrix": {
+      "tn": 56669,
+      "fp": 3,
+      "fn": 25,
+      "tp": 49
+    }
+  },
+  "dummy_test": {
+    "average_precision": 0.0013040566735981391,
+    "precision": 0.0,
+    "recall": 0.0,
+    "false_positive_rate": 0.0,
+    "alerts_per_1000": 0.0,
+    "confusion_matrix": {
+      "tn": 56672,
+      "fp": 0,
+      "fn": 74,
+      "tp": 0
+    }
+  },
+  "limitations": [
+    "Two-day anonymized historical benchmark; no production generalization claim.",
+    "Upstream PCA provenance cannot be revalidated from this CSV.",
+    "No customer identifiers: customer-level split isolation cannot be verified."
+  ]
+}

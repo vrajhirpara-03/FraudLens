@@ -1,0 +1,397 @@
+{
+  "partition": "training folds + validation only; test never scored",
+  "dataset_sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89",
+  "sklearn_version": "1.9.1",
+  "seed": 42,
+  "validation": {
+    "rows": 56745,
+    "fraud": 57
+  },
+  "deployed_threshold_check": {
+    "threshold": 0.9999922476120927,
+    "caught": 40,
+    "false_alarms": 3
+  },
+  "hgb_grid": [
+    {
+      "learning_rate": 0.05,
+      "class_weight": null
+    },
+    {
+      "learning_rate": 0.05,
+      "class_weight": "balanced"
+    },
+    {
+      "learning_rate": 0.1,
+      "class_weight": null
+    },
+    {
+      "learning_rate": 0.1,
+      "class_weight": "balanced"
+    }
+  ],
+  "hgb_fold_mean_average_precision": {
+    "hgb_0": 0.7960986330854576,
+    "hgb_1": 0.7817083699890894,
+    "hgb_2": 0.7843858694578586,
+    "hgb_3": 0.7876925368787046
+  },
+  "hgb_chosen": {
+    "learning_rate": 0.05,
+    "class_weight": null
+  },
+  "chronological_folds": [
+    {
+      "fold": 1,
+      "fit_rows": 34047,
+      "fit_fraud": 103,
+      "eval_rows": 34044,
+      "eval_fraud": 68,
+      "models": {
+        "logistic": {
+          "average_precision": 0.7340413298133398,
+          "caught_at_budget": {
+            "3": 37,
+            "10": 45,
+            "25": 54
+          }
+        },
+        "hgb_0": {
+          "average_precision": 0.8265291543813653,
+          "caught_at_budget": {
+            "3": 49,
+            "10": 53,
+            "25": 58
+          }
+        },
+        "hgb_1": {
+          "average_precision": 0.7746068423587683,
+          "caught_at_budget": {
+            "3": 48,
+            "10": 51,
+            "25": 53
+          }
+        },
+        "hgb_2": {
+          "average_precision": 0.8288666963189754,
+          "caught_at_budget": {
+            "3": 49,
+            "10": 52,
+            "25": 58
+          }
+        },
+        "hgb_3": {
+          "average_precision": 0.7817751106059505,
+          "caught_at_budget": {
+            "3": 49,
+            "10": 51,
+            "25": 52
+          }
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "fit_rows": 68091,
+      "fit_fraud": 171,
+      "eval_rows": 34050,
+      "eval_fraud": 55,
+      "models": {
+        "logistic": {
+          "average_precision": 0.721204671270496,
+          "caught_at_budget": {
+            "3": 36,
+            "10": 40,
+            "25": 41
+          }
+        },
+        "hgb_0": {
+          "average_precision": 0.8391020247199794,
+          "caught_at_budget": {
+            "3": 44,
+            "10": 46,
+            "25": 46
+          }
+        },
+        "hgb_1": {
+          "average_precision": 0.848350290499395,
+          "caught_at_budget": {
+            "3": 45,
+            "10": 47,
+            "25": 47
+          }
+        },
+        "hgb_2": {
+          "average_precision": 0.8262126569499271,
+          "caught_at_budget": {
+            "3": 43,
+            "10": 45,
+            "25": 45
+          }
+        },
+        "hgb_3": {
+          "average_precision": 0.8480033198291733,
+          "caught_at_budget": {
+            "3": 45,
+            "10": 47,
+            "25": 47
+          }
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "fit_rows": 102141,
+      "fit_fraud": 226,
+      "eval_rows": 34045,
+      "eval_fraud": 32,
+      "models": {
+        "logistic": {
+          "average_precision": 0.5901001370090388,
+          "caught_at_budget": {
+            "3": 18,
+            "10": 21,
+            "25": 25
+          }
+        },
+        "hgb_0": {
+          "average_precision": 0.7160059804562922,
+          "caught_at_budget": {
+            "3": 25,
+            "10": 25,
+            "25": 25
+          }
+        },
+        "hgb_1": {
+          "average_precision": 0.6814243142730828,
+          "caught_at_budget": {
+            "3": 23,
+            "10": 25,
+            "25": 25
+          }
+        },
+        "hgb_2": {
+          "average_precision": 0.7184604492049923,
+          "caught_at_budget": {
+            "3": 23,
+            "10": 25,
+            "25": 25
+          }
+        },
+        "hgb_3": {
+          "average_precision": 0.7066139933633225,
+          "caught_at_budget": {
+            "3": 23,
+            "10": 25,
+            "25": 25
+          }
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "fit_rows": 136186,
+      "fit_fraud": 258,
+      "eval_rows": 34049,
+      "eval_fraud": 84,
+      "models": {
+        "logistic": {
+          "average_precision": 0.8469978631667342,
+          "caught_at_budget": {
+            "3": 60,
+            "10": 68,
+            "25": 71
+          }
+        },
+        "hgb_0": {
+          "average_precision": 0.8027573727841933,
+          "caught_at_budget": {
+            "3": 52,
+            "10": 56,
+            "25": 68
+          }
+        },
+        "hgb_1": {
+          "average_precision": 0.8224520328251115,
+          "caught_at_budget": {
+            "3": 51,
+            "10": 58,
+            "25": 68
+          }
+        },
+        "hgb_2": {
+          "average_precision": 0.7640036753575398,
+          "caught_at_budget": {
+            "3": 24,
+            "10": 56,
+            "25": 66
+          }
+        },
+        "hgb_3": {
+          "average_precision": 0.8143777237163717,
+          "caught_at_budget": {
+            "3": 46,
+            "10": 57,
+            "25": 68
+          }
+        }
+      }
+    }
+  ],
+  "validation_results": {
+    "logistic_regression_deployed": {
+      "average_precision": 0.7726808523329118,
+      "budgets": [
+        {
+          "budget": 3,
+          "fraud_caught": 40,
+          "fraud_missed": 17,
+          "false_alarms": 3,
+          "precision": 0.9302325581395349,
+          "recall": 0.7017543859649122,
+          "recall_95ci_wilson": [
+            0.5733571989653999,
+            0.804674499251819
+          ],
+          "threshold_log_odds": 11.76750189257299,
+          "threshold_probability": 0.9999922476120927
+        },
+        {
+          "budget": 10,
+          "fraud_caught": 41,
+          "fraud_missed": 16,
+          "false_alarms": 10,
+          "precision": 0.803921568627451,
+          "recall": 0.7192982456140351,
+          "recall_95ci_wilson": [
+            0.5916980132395605,
+            0.8192060065617645
+          ],
+          "threshold_log_odds": 10.327169604128551,
+          "threshold_probability": 0.9999672694719215
+        },
+        {
+          "budget": 25,
+          "fraud_caught": 44,
+          "fraud_missed": 13,
+          "false_alarms": 25,
+          "precision": 0.6376811594202898,
+          "recall": 0.7719298245614035,
+          "recall_95ci_wilson": [
+            0.647939889543265,
+            0.861581095010378
+          ],
+          "threshold_log_odds": 7.900605329671679,
+          "threshold_probability": 0.9996296180473153
+        }
+      ]
+    },
+    "hist_gradient_boosting": {
+      "average_precision": 0.7576427739785228,
+      "budgets": [
+        {
+          "budget": 3,
+          "fraud_caught": 38,
+          "fraud_missed": 19,
+          "false_alarms": 3,
+          "precision": 0.926829268292683,
+          "recall": 0.6666666666666666,
+          "recall_95ci_wilson": [
+            0.5372251158005144,
+            0.7750619392484928
+          ],
+          "threshold_log_odds": 1.1535687738730358,
+          "threshold_probability": 0.7601621642372237
+        },
+        {
+          "budget": 10,
+          "fraud_caught": 41,
+          "fraud_missed": 16,
+          "false_alarms": 10,
+          "precision": 0.803921568627451,
+          "recall": 0.7192982456140351,
+          "recall_95ci_wilson": [
+            0.5916980132395605,
+            0.8192060065617645
+          ],
+          "threshold_log_odds": -1.6403159104060263,
+          "threshold_probability": 0.16242208118279847
+        },
+        {
+          "budget": 25,
+          "fraud_caught": 43,
+          "fraud_missed": 14,
+          "false_alarms": 25,
+          "precision": 0.6323529411764706,
+          "recall": 0.7543859649122807,
+          "recall_95ci_wilson": [
+            0.628977037672441,
+            0.847671625297096
+          ],
+          "threshold_log_odds": -5.021087147264228,
+          "threshold_probability": 0.006554110751705991
+        }
+      ]
+    }
+  },
+  "paired_comparison": {
+    "mcnemar": [
+      {
+        "budget": 3,
+        "caught_by_both": 36,
+        "only_logistic": 4,
+        "only_hgb": 2,
+        "exact_p_two_sided": 0.6875
+      },
+      {
+        "budget": 10,
+        "caught_by_both": 39,
+        "only_logistic": 2,
+        "only_hgb": 2,
+        "exact_p_two_sided": 1.0
+      },
+      {
+        "budget": 25,
+        "caught_by_both": 43,
+        "only_logistic": 1,
+        "only_hgb": 0,
+        "exact_p_two_sided": 1.0
+      }
+    ],
+    "bootstrap": {
+      "3": {
+        "mean_extra_caught": -0.202,
+        "ci95": [
+          -6.0,
+          7.0
+        ],
+        "share_resamples_hgb_better": 0.387,
+        "share_tied": 0.126
+      },
+      "10": {
+        "mean_extra_caught": -0.324,
+        "ci95": [
+          -5.0,
+          4.0
+        ],
+        "share_resamples_hgb_better": 0.38,
+        "share_tied": 0.169
+      },
+      "25": {
+        "mean_extra_caught": -0.452,
+        "ci95": [
+          -3.0,
+          3.0
+        ],
+        "share_resamples_hgb_better": 0.188,
+        "share_tied": 0.306
+      }
+    },
+    "bootstrap_resamples": 1000
+  },
+  "notes": [
+    "Budget thresholds are chosen and measured on the same validation data, so absolute counts are optimistic for both models; the paired difference is the fairer signal.",
+    "Transaction-level bootstrap ignores time clustering of fraud and likely understates uncertainty.",
+    "Experimental budgets, not business requirements. No model saved; deployed artifact untouched."
+  ]
+}
