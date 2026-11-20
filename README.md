@@ -9,6 +9,10 @@ FraudLens has two parts:
 
 > Research prototype. Not a payment authorization system. Never upload real card numbers, CVVs, or customer identifiers.
 
+![ML benchmark dashboard showing held-out test results](docs/screenshots/fraudlens-benchmark.png)
+
+![Statement review flagging a duplicate charge and an unusually large payment](docs/screenshots/fraudlens-statement-review.png)
+
 ## Results
 
 Logistic regression baseline on the **held-out test set** (56,746 transactions, 74 fraud), evaluated once, with the threshold chosen on validation only:
