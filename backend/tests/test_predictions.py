@@ -4,7 +4,7 @@ import pytest
 from fastapi.testclient import TestClient
 from backend.app.main import app
 from ml.data.validate import FEATURES
-
+from backend.app.api.predictions import MAX_BYTES, MAX_ROWS
 
 @pytest.fixture
 def client():
@@ -35,7 +35,7 @@ def test_bad_input(client):
     assert client.post('/api/predict', json={'Amount': -1}).status_code == 422
     assert client.post('/api/predict/csv', content='Amount\n1', headers={'Content-Type':'text/csv'}).status_code == 422
     assert client.post('/api/predict/csv', content='x').status_code == 415
-    assert client.post('/api/predict/csv', content='x'*1000001, headers={'Content-Type':'text/csv'}).status_code == 413
+    assert client.post('/api/predict/csv', content='x'*1000001, headers={'Content-Type':'text/csv'}).status_code == 422
 
 
 def test_unavailable_model(client):
@@ -47,3 +47,7 @@ def test_model_metrics(client):
     response = client.get('/api/model')
     assert response.status_code == 200
     assert response.json()['features'] == FEATURES
+
+def test_new_upload_limits():
+    assert MAX_BYTES == 200_000_000
+    assert MAX_ROWS == 300_000

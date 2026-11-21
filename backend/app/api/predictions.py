@@ -6,8 +6,8 @@ from backend.app.schemas.prediction import Transaction
 from ml.data.validate import FEATURES
 
 router = APIRouter()
-MAX_BYTES = 1_000_000
-MAX_ROWS = 1000
+MAX_BYTES = 200_000_000
+MAX_ROWS = 300_000
 
 
 def ready(request):
