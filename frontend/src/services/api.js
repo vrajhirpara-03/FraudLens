@@ -8,3 +8,4 @@ async function request(path, options = {}) {
 export const getHealth = signal => request('/api/health', { signal });
 export const getModel = signal => request('/api/model', { signal });
 export const predictCSV = file => request('/api/predict/csv', { method: 'POST', headers: { 'Content-Type': 'text/csv' }, body: file });
+export const uploadWorkbook = file => request('/api/statement/workbook', { method: 'POST', body: file });

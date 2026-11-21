@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { guess, review } from './services/statement';
+import { uploadWorkbook } from './services/api';
 
 export default function Statement() {
   const [book, setBook] = useState(null), [sheet, setSheet] = useState(0);
@@ -27,10 +28,7 @@ export default function Statement() {
     setBusy(true); setError(''); setBook(null); setResult(null);
     try {
       if (file.size > 5000000) throw Error('Choose a workbook smaller than 5 MB.');
-      const response = await fetch('/api/statement/workbook', {method:'POST', body:file});
-      if (!response.headers.get('content-type')?.includes('application/json')) throw Error('Check that the local FraudLens backend is running.');
-      const data = await response.json();
-      if (!response.ok) throw Error(data.detail || 'Could not read workbook.');
+      const data = await uploadWorkbook(file);
       setBook(data); selectSheet(data,0);
     } catch (e) { setError(e.message); }
     finally { setBusy(false); }
@@ -46,7 +44,7 @@ export default function Statement() {
   }
   const fields = signed ? ['date','description','amount'] : ['date','description','debit','credit'];
   return <section className="statement"><h1>Review a bank statement</h1>
-    <p>Choose an Excel statement to check for possible double charges and unusually large payments. Your local FraudLens server reads the file in memory.</p>
+    <p>Choose an Excel statement to check for possible double charges and unusually large payments. FraudLens reads the file in memory on the configured API server. For privacy, use only fictional or authorized test statements in a public demo.</p>
     <label>Bank statement (.xlsx, up to 5 MB) <input type="file" accept=".xlsx" disabled={busy} onChange={e => {const file=e.target.files[0]; e.target.value=''; if(file) load(file);}} /></label>
     <p><a href="/sample-statement.xlsx" download>Download a fictional sample statement</a></p>
     {busy && <p role="status">Reading workbook…</p>}
